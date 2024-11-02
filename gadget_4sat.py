@@ -104,16 +104,27 @@ def test_HH_gadget():
     B = [qket(0) + qket(1), qket(0) - qket(1)]
     tq = lambda t, b: tp(tket(t), qket(b), I2)
     tqH = lambda t, b: tp(tket(t), B[b], I2)
+    # sqrt(2)*H
+    # |00> - |10> - |11>
+    # |01> - |10> + |11>
     H_trans = (
             kb(tq(0, 0) - tqH(1, 0)) +
             kb(tq(0, 1) - tqH(1, 1))
     )
     tq = lambda t, b: tp(tket(t), I2, qket(b))
     tqH = lambda t, b: tp(tket(t), I2, B[b])
+    # sqrt(1/2)*H
+    # |10> + |11> - |00> = -(|00> - |10> - |11>)
+    # |10> - |11> - |01> = -(|01> - |10> + |11>)
     H_trans += (
-            kb(2*tq(1, 0) - tqH(2, 0)) +
-            kb(2*tq(1, 1) - tqH(2, 1))
+            kb(tqH(1, 0) - tq(2, 0)) +
+            kb(tqH(1, 1) - tq(2, 1))
     )
+    # alternative:
+    # H_trans += (
+    #         kb(2*tq(1, 0) - tqH(2, 0)) +
+    #         kb(2*tq(1, 1) - tqH(2, 1))
+    # )
     H = H_trans
 
     v00 = tp(tket(0), qket(0), qket(0)) + tp(tket(1), B[0], qket(0)) / 2 + tp(tket(2), B[0], B[0]) / 2
