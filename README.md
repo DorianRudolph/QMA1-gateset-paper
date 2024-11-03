@@ -16,3 +16,7 @@ The argument containment of the clique homology problem in PSPACE in the paper i
 
 The scripts require [SageMath](https://www.sagemath.org/) (tested with version 10.4).
 The code was tested on macOS using the SageMath distribution [Sage_macOS](https://github.com/3-manifolds/Sage_macOS) and on Arch Linux using the `sagemath` package.
+
+## License
+
+All of our code is available under GPLv2 (or later) license.

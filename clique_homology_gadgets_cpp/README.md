@@ -9,12 +9,12 @@ Dependencies: [spectra](https://spectralib.org/), [SuiteSparse](https://people.e
 
 Currently, CMake is configured with a custom build of SuiteSparse, so you need to adapt to your setup.
 This is because the SuiteSparse package of my distribution did not seem to have multithreading enabled.
-I also provide an alternative [build file](vcpkg_CMakeLists.txt) using [vcpkg](https://vcpkg.io/) to load the dependencies.
+We also provide an alternative [build file](vcpkg_CMakeLists.txt) using [vcpkg](https://vcpkg.io/) to load the dependencies.
 
 The code was tested on Arch Linux and macOS.
 Note that 64 GB of RAM are necessary when setting `compute_d1_rank = true` for the 4-qubit gadgets.
 
 ## License
 
-All my code is available under GPLv2 (or later) license.
+All of our code is available under GPLv2 (or later) license.
 See [thirdparty](thirdparty) for licenses of dependencies.
